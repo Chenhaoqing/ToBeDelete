@@ -285,3 +285,21 @@ class Node implements Comparator<Node> {
 - C[i, j] = C[i-1, j-1] + 1; 如果i,j>0，且xi=yj
 - C[i, j] = 0; 如果i,j>0，且xi!=yj
 ```
+
+## 拓扑排序
+
+```shell
+L← Empty list that will contain the sorted elements
+S ← Set of all nodes with no incoming edges
+while S is non-empty do
+    remove a node n from S
+    insert n into L
+    foreach node m with an edge e from nto m do
+        remove edge e from thegraph
+        ifm has no other incoming edges then
+            insert m into S
+if graph has edges then
+    return error (graph has at least onecycle)
+else
+    return L (a topologically sortedorder)
+```
