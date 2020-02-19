@@ -267,3 +267,11 @@ class Node implements Comparator<Node> {
 } 
 ```
 </details>
+
+## 最长公共子序列
+```
+定义C[i, j]存储了字符串Xi与字符串Yj的最长公共子序列长度。
+- C[i, j] = 0; 如果i=0或者j=0
+- C[i, j] = C[i-1, j-1]; 如果i,j>0，且xi=yj
+- C[i, j] = max{C[i, j-1], C[i-1, j]}; 如果i,j>0，且xi!=yj
+```
